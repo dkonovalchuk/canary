@@ -200,7 +200,7 @@ defmodule Canary.Plugs do
       action in [:index, :new, :create] ->
         opts[:model]
       true ->
-        fetch_resource(conn, opts)
+        opts[:model]
     end
 
     case current_user |> can?(action, resource) do
